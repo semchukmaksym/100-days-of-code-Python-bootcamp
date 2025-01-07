@@ -11,14 +11,32 @@ nr_numbers = int(input("How many numbers would you like?"))
 
 password = ""
 
-for char in range(1, nr_letters +1 ):
-    password += random.choice(letters)
-
-for num in range(1, nr_symbols +1 ):
-    password += random.choice(symbols)
-
-for char in range(1, nr_numbers +1 ):
-    password += random.choice(numbers)
-
-print(password)
+# for char in range(1, nr_letters +1 ):
+#     password += random.choice(letters)
+#
+# for num in range(1, nr_symbols +1 ):
+#     password += random.choice(symbols)
+#
+# for char in range(1, nr_numbers +1 ):
+#     password += random.choice(numbers)
+#
+# print(password)
 # HARD PART
+
+password_list = []
+
+for char in range(0, nr_letters):
+    password_list.append(random.choice(letters))
+
+for char in range(0, nr_symbols):
+    password_list.append(random.choice(symbols))
+
+for char in range(0, nr_numbers):
+    password_list.append(random.choice(numbers))
+
+random.shuffle(password_list)
+
+for char in password_list:
+    password += char
+
+print(f"Your password is: {password}")
