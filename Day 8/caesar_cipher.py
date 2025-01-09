@@ -4,23 +4,17 @@ direction = input("Type encode to encrypt, type 'decode' to decrypt:\n")
 text = input("Type you message:\n")
 shift = int(input("Type the shift number:\n"))
 
-def encrypt(original_text, shift_amount):
-   lower_orig = original_text.lower()
-   encrypted = ""
-   for letter in lower_orig:
-      encrypted_index = alphabet.index(letter) + shift_amount
-      encrypted += alphabet[encrypted_index]
-   print(f"Here is encoded result: {encrypted}")
 
-def decrypt(original_text, shift_amount):
-   lower_orig = original_text.lower()
-   decrypted = ""
-   for letter in lower_orig:
-      encrypted_index = alphabet.index(letter) - shift_amount
-      decrypted += alphabet[encrypted_index]
-   print(f"Here is encoded result: {decrypted}")
+def caesar(original_text, shift_amount, encode_or_decode):
+    lower_orig = original_text.lower()
 
-if direction == encrypt:
-    encrypt(text, shift)
-else:
-    decrypt(text, shift)
+    if encode_or_decode == "decode":
+        shift_amount *= -1
+
+    encrypted = ""
+    for letter in lower_orig:
+        encrypted_index = alphabet.index(letter) + shift_amount
+        encrypted += alphabet[encrypted_index]
+    print(f"Here is {encode_or_decode}d result: {encrypted}")
+
+caesar(text, shift, direction)
