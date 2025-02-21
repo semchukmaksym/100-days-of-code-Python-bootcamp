@@ -1,6 +1,6 @@
 import smtplib
 
-from gmail import *
+from password import *
 
 connection = smtplib.SMTP("smtp.gmail.com")
 
