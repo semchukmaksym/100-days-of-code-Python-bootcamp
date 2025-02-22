@@ -19,7 +19,7 @@
 # year = now.year
 # month = now.month
 # day_of_week = now.weekday()
-# data_of_birth = dt.datetime(year=1992, month=1, day=21, hour=5)
+# data_of_birth = dt.datetime(year=1999, month=11, day=11, hour=11)
 
 # ---------------------------------------PRACTICE--------------------------------------------
 
