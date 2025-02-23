@@ -29,13 +29,10 @@ class QuizInterface:
         true_image = PhotoImage(file="images/true.png")
         self.true_button = Button(image=true_image, highlightthickness=0, command=self.true_pressed)
         self.true_button.grid(row=2, column=0)
-
         false_image = PhotoImage(file="images/false.png")
         self.false_button = Button(image=false_image, highlightthickness=0, command=self.false_pressed)
         self.false_button.grid(row=2, column=1)
-
         self.get_next_question()
-
         self.window.mainloop()
 
     def get_next_question(self):
